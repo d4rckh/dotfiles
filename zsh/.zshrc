@@ -74,33 +74,58 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-[[ -f "$HOME/.zsh_aliases" ]] && source "$HOME/.zsh_aliases"
-# BEGIN ANSIBLE MANAGED BLOCK
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-# END ANSIBLE MANAGED BLOCK
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+# User configuration
 
-export PNPM_HOME="{{ pnpm_home }}"
-case ":$PATH:" in
- *":$PNPM_HOME:"*) ;;
- *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-alias dsize='ncdu'
-alias fz='fzf'
-alias rg='rg --smart-case --hidden --glob "!.git/*"'
-alias f='fd --hidden --exclude .git'
-alias c='bat --style=plain --paging=never'
-alias ls='exa --group-directories-first'
-alias ll='exa -l --group-directories-first'
-alias la='exa -la --group-directories-first'
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
+
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pnpm
-export PNPM_HOME="{{ pnpm_home }}"
+export PNPM_HOME="/home/andrei/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+alias dsize='ncdu'
+alias fz='fzf'
+alias rg='rg --smart-case --hidden --glob "!.git/*"'
+alias f='fd --hidden --exclude .git'
+alias c='bat --style=plain --paging=never'
+
+alias ls='exa --group-directories-first'
+alias ll='exa -l --group-directories-first'
+alias la='exa -la --group-directories-first'
+
