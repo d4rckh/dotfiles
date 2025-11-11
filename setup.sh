@@ -10,20 +10,18 @@ fi
 
 sudo pacman -Syy
 
-sudo pacman -S --needed zsh
+sudo pacman -S --noconfirm --needed zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-sudo pacman -S --needed git base-devel tmux zip unzip ffmpeg vlc glow fastfetch
+sudo pacman -S --noconfirm --needed git base-devel tmux zip unzip ffmpeg vlc glow fastfetch
 
-yay -S --needed \
-  visual-studio-code-bin \
-  zen-browser-bin \
+yay -S --noconfirm --needed \
   github-cli \
   docker docker-compose \
   lazydocker \
   btop \
   python python-pip python-virtualenv \
-  ncdu fzf ripgrep fd bat exa stow
+  ncdu fzf ripgrep fd bat exa stow lazygit
 
 if ! command -v nvm &>/dev/null; then
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
