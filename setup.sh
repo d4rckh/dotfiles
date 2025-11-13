@@ -40,6 +40,7 @@ fi
 
 sdk install java 21.0.8-tem
 sdk install gradle
+sdk install maven
 
 
 sudo groupadd docker || true
