@@ -13,7 +13,7 @@ sudo pacman -Syy
 sudo pacman -S --noconfirm --needed zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-sudo pacman -S --noconfirm --needed git base-devel tmux zip unzip ffmpeg vlc glow fastfetch
+sudo pacman -S --noconfirm --needed git base-devel tmux zip unzip ffmpeg vlc glow fastfetch zip unzip
 
 yay -S --noconfirm --needed \
   github-cli \
