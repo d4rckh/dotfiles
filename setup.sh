@@ -50,5 +50,7 @@ newgrp docker
 
 gh auth login
 
+curl -fsSL https://bun.com/install | bash
+
 stow tmux
 stow zsh
